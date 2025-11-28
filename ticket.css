@@ -1,3 +1,27 @@
-.form{
+.Form{
+    background-color: #646564;
     border: 1px solid black;
+    padding: 50px;
+    width: 300px;
+    align-items: center;
+    place-items: center;
+    margin: auto;
+    margin-top: 100px;
+}
+#ticket{
+    background-color: #646564;
+    border: 1px solid black;
+    padding: 50px;
+    width: 300px;
+    align-items: center;
+    place-items: center;
+    margin: auto;
+    margin-top: 100px;
+}
+.inline{
+    display: inline;
+}
+
+body{
+    background-color: rgb(62, 63, 63);
 }

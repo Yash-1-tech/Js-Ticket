@@ -1,12 +1,21 @@
+
 LOWER = 'Lower_seat';
 MIDDLE = 'Middle_seat';
 UPPER = 'Upper_seat';
-let x = 0;
+
+idGenrator = (seatType) => {
+    let id = seatType[0] + '-';
+    for(let i = 0; i<10; i++){
+        id = id + Math.round(Math.random() * 9 - 0);
+    }
+    return id;
+}
 
 function Train( passName, passAge, start, end) {
-    this.passName = passName,
-    this.passAge = passAge;
-    
+    this.Name = passName,
+    this.Age = passAge;
+
+    // primary age based allottment 
     const seatType = passAge => {
         if (passAge > 60) {
             return LOWER;
@@ -19,6 +28,7 @@ function Train( passName, passAge, start, end) {
         }
     };
     this.seatType = seatType(passAge);
+    this.id = idGenrator(this.seatType),
     this.start = start,
     this.end = end;
 
@@ -49,6 +59,13 @@ if(form){
         document.getElementById('end').value,
         );
         console.log(passenger);
+        document.getElementById('printName').innerHTML = 'Name: ' + passenger.Name + '\t';
+        document.getElementById('printId').innerHTML = '| \t '+ 'ID: ' + passenger.id;
+        document.getElementById('printAge').innerHTML = 'Age: ' + passenger.Age + '\t';
+        document.getElementById('printSeatType').innerHTML = '| \t ' + 'Seat Type: ' + passenger.seatType;
+        document.getElementById('printStart').innerHTML = 'Start: ' + passenger.start + '\t';
+        document.getElementById('printEnd').innerHTML = '| \t ' + 'End: ' + passenger.end + '\t';
+        document.getElementById('printFare').innerHTML = '| \t '+'Fare: Rs.' + passenger.fare;
     });
 }
 else{

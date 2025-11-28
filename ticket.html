@@ -5,22 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="ticket.css">
-    <script src="jsTicket.js"></script>
+    
 </head>
 <body>
     <div class="Form">
         <form id="passengerForm">
             <label for="passengerDetails">Name: <input id='name' type="text"></label>
-            <br>
+            <br><br>
             <label for="passengerDetails">Age: <input id='age' type="number"></label>
-            <br>
+            <br><br>
             <label for="passengerDetails">Start Station: <input type="text" id="start"></label>
-            <br>
+            <br><br>
             <label for="passengerDetails">Destination: <input type="text"  id="end"></label>
-            <br>
+            <br><br>
             <button type="submit">submit</button>
         </form>
     </div>
-    
+    <div id="ticket">
+        <h2>Ticket</h2>
+        <p id="printName" class="inline"></p>
+        <p id="printId" class="inline"></p>
+        <br><br>
+        <p id="printAge" class="inline"></p>
+        <p id="printSeatType" class="inline"></p>
+        <br><br>
+        <p class="inline" id="printStart"></p>
+        <p class="inline" id="printEnd"></p>
+        <p class="inline" id="printFare"></p>
+    </div>
+    <script src="jsTicket.js"></script>
 </body>
 </html>
