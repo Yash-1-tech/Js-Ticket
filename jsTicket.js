@@ -50,23 +50,28 @@ console.log(yash);
 
 const form = document.getElementById('passengerForm');
 if(form){
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const passenger = new Train(
-        document.getElementById('name').value,
-        document.getElementById('age').value,
-        document.getElementById('start').value,
-        document.getElementById('end').value,
-        );
-        console.log(passenger);
-        document.getElementById('printName').innerHTML = 'Name: ' + passenger.Name + '\t';
-        document.getElementById('printId').innerHTML = '| \t '+ 'ID: ' + passenger.id;
-        document.getElementById('printAge').innerHTML = 'Age: ' + passenger.Age + '\t';
-        document.getElementById('printSeatType').innerHTML = '| \t ' + 'Seat Type: ' + passenger.seatType;
-        document.getElementById('printStart').innerHTML = 'Start: ' + passenger.start + '\t';
-        document.getElementById('printEnd').innerHTML = '| \t ' + 'End: ' + passenger.end + '\t';
-        document.getElementById('printFare').innerHTML = '| \t '+'Fare: Rs.' + passenger.fare;
-    });
+    if(document.getElementById('name').value){
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const passenger = new Train(
+            document.getElementById('name').value,
+            document.getElementById('age').value,
+            document.getElementById('start').value,
+            document.getElementById('end').value,
+            );
+            console.log(passenger);
+            document.getElementById('printName').innerHTML = 'Name: ' + passenger.Name + '\t';
+            document.getElementById('printId').innerHTML = '| \t '+ 'ID: ' + passenger.id;
+            document.getElementById('printAge').innerHTML = 'Age: ' + passenger.Age + '\t';
+            document.getElementById('printSeatType').innerHTML = '| \t ' + 'Seat Type: ' + passenger.seatType;
+            document.getElementById('printStart').innerHTML = 'Start: ' + passenger.start + '\t';
+            document.getElementById('printEnd').innerHTML = '| \t ' + 'End: ' + passenger.end + '\t';
+            document.getElementById('printFare').innerHTML = '| \t '+'Fare: Rs.' + passenger.fare;
+        });
+    }
+    else{
+        alert("pls fill the form");
+    }
 }
 else{
     console.log('form not found');
